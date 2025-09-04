@@ -5,7 +5,10 @@ services:
     restart: unless-stopped
     ports:
       - "8095:3000"
+    environment:
+      - HOMEPAGE_ALLOWED_HOSTS=account.upcube.ai,account.upcube.ai:8095,15.204.240.98:8095
     volumes:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
+
 
